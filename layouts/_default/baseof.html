@@ -6,7 +6,11 @@
 >
   {{- partial "head" . }}
 
-
+  <head>
+    {{ if not .Site.IsServer }}
+    {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
+  </head>>
   <body class="flex min-h-screen flex-col">
     <header
       class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
